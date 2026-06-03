@@ -97,10 +97,10 @@ const DashboardOverview = () => {
         <div className="bg-gradient-to-br from-primary-600 to-primary-800 p-8 rounded-3xl text-white shadow-xl shadow-primary-200">
           <h2 className="text-xl font-bold mb-4">SparkServ Tip</h2>
           <p className="text-primary-100/90 leading-relaxed">
-            Regular maintenance can extend your appliance life by up to 30%. Check our AI Helper for basic troubleshooting tips before booking!
+            Regular maintenance can extend your appliance life by up to 30%. Check our guides for basic troubleshooting tips before booking!
           </p>
           <button className="mt-8 bg-white text-primary-600 px-6 py-3 rounded-2xl font-bold hover:bg-primary-50 transition-colors">
-            Get Started
+            Learn More
           </button>
         </div>
       </div>

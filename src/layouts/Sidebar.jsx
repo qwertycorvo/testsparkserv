@@ -37,7 +37,6 @@ const Sidebar = () => {
       { icon: PlusCircle, label: 'Request Repair', path: '/request' },
       { icon: Wrench, label: 'My Appliances', path: '/appliances' },
       { icon: History, label: 'Repair History', path: '/history' },
-      { icon: Bot, label: 'AI Helper', path: '/ai-inquiry' },
     ],
     technician: [
       { icon: LayoutDashboard, label: 'Job Dashboard', path: '/dashboard' },

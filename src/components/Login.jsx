@@ -37,7 +37,10 @@ const Login = () => {
             <div className="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-primary-600 shadow-xl shadow-primary-900/20">
               <Wrench className="h-7 w-7" />
             </div>
-            <span className="text-3xl font-black tracking-tighter italic">SPARKSERV</span>
+            <div>
+              <span className="text-3xl font-black tracking-tighter italic block leading-none">SPARKSERV</span>
+              <span className="text-[10px] font-bold tracking-[0.2em] text-accent-400 uppercase">Hanap Usap Fix</span>
+            </div>
           </div>
 
           <div className="relative z-10 mt-auto">
@@ -77,7 +80,10 @@ const Login = () => {
             <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary-600 text-white shadow-lg shadow-primary-200">
               <Wrench className="h-6 w-6" />
             </div>
-            <span className="text-2xl font-black tracking-tighter italic text-primary-900">SPARKSERV</span>
+            <div>
+              <span className="text-2xl font-black tracking-tighter italic text-primary-900 block leading-none">SPARKSERV</span>
+              <span className="text-[8px] font-bold tracking-[0.2em] text-accent-600 uppercase">Hanap Usap Fix</span>
+            </div>
           </div>
 
           <div className="mb-10">
