@@ -12,7 +12,7 @@ import {
   History,
   MapPin,
   CreditCard,
-  Sparkles,
+  Eye,
   Ticket
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
@@ -29,7 +29,7 @@ const Sidebar = () => {
   const menuItems = {
     admin: [
       { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
-      { icon: Sparkles, label: 'AI Insights', path: '/ai-insights' },
+      { icon: Eye, label: 'Job Monitoring', path: '/job-monitoring' },
       { icon: Users, label: 'User Management', path: '/users' },
       { icon: ClipboardList, label: 'Booking Review', path: '/bookings' },
       { icon: Ticket, label: 'Support Tickets', path: '/tickets' },
