@@ -4,6 +4,7 @@ import { AuthProvider } from './context/AuthContext';
 import Login from './components/Login';
 import DashboardLayout from './layouts/DashboardLayout';
 import DashboardOverview from './pages/DashboardOverview';
+import AIInsights from './pages/AIInsights';
 import Appliances from './pages/Appliances';
 import UserManagement from './pages/UserManagement';
 import JobTracking from './pages/JobTracking';
@@ -28,6 +29,7 @@ function App() {
           
           <Route element={<DashboardLayout />}>
             <Route path="/dashboard" element={<DashboardOverview />} />
+            <Route path="/ai-insights" element={<AIInsights />} />
             <Route path="/appliances" element={<Appliances />} />
             <Route path="/users" element={<UserManagement />} />
             <Route path="/jobs" element={<JobTracking />} />
