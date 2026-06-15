@@ -228,40 +228,6 @@ const RepairHistory = () => {
           </div>
         ))}
       </div>
-
-      {/* Why This Matters for Capstone */}
-      <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white p-8 rounded-3xl shadow-xl">
-        <h3 className="text-2xl font-bold mb-4">Explain This to Your Panel</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <h4 className="text-lg font-bold mb-2 flex items-center gap-2">
-              <Calendar className="h-5 w-5" />
-              Customer Convenience
-            </h4>
-            <p className="text-primary-100/90">
-              Customers can track all repairs, view technician feedback, and download receipts anytime.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-lg font-bold mb-2 flex items-center gap-2">
-              <Star className="h-5 w-5" />
-              Quality Assurance
-            </h4>
-            <p className="text-primary-100/90">
-              Rating system and detailed notes ensure service quality and accountability.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-lg font-bold mb-2 flex items-center gap-2">
-              <MapPin className="h-5 w-5" />
-              Localized for CDO
-            </h4>
-            <p className="text-primary-100/90">
-              All records show Cagayan de Oro landmarks, making it realistic for your panel.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

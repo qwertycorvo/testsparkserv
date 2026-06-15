@@ -226,40 +226,6 @@ const JobMonitoring = () => {
           </table>
         </div>
       </div>
-
-      {/* Why This Matters for Capstone */}
-      <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white p-8 rounded-3xl shadow-xl">
-        <h3 className="text-2xl font-bold mb-4">Why This Impresses Your Panel</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <h4 className="text-lg font-bold mb-2 flex items-center gap-2">
-              <Clock className="h-5 w-5" />
-              Real-Time Monitoring
-            </h4>
-            <p className="text-primary-100/90">
-              Shows you can build live dashboards with status tracking and metrics - classic capstone material.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-lg font-bold mb-2 flex items-center gap-2">
-              <CheckCircle2 className="h-5 w-5" />
-              Quality Assurance
-            </h4>
-            <p className="text-primary-100/90">
-              Includes photo uploads, messaging, and customer ratings - shows focus on service quality.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-lg font-bold mb-2 flex items-center gap-2">
-              <Users className="h-5 w-5" />
-              Operational Excellence
-            </h4>
-            <p className="text-primary-100/90">
-              Optimizes technician dispatch, tracks performance, and improves efficiency - clear business value.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };

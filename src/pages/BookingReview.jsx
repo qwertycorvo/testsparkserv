@@ -268,40 +268,6 @@ const BookingReview = () => {
           </div>
         ))}
       </div>
-
-      {/* Why This Matters for Capstone */}
-      <div className="bg-gradient-to-r from-primary-600 to-primary-800 text-white p-8 rounded-3xl shadow-xl">
-        <h3 className="text-2xl font-bold mb-4">Explain This to Your Panel</h3>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <div>
-            <h4 className="text-lg font-bold mb-2 flex items-center gap-2">
-              <CheckCircle2 className="h-5 w-5" />
-              Admin Control
-            </h4>
-            <p className="text-primary-100/90">
-              Admins have full control - they can review, approve, reject, and assign technicians to bookings.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-lg font-bold mb-2 flex items-center gap-2">
-              <MapPin className="h-5 w-5" />
-              CDO Localization
-            </h4>
-            <p className="text-primary-100/90">
-              Realistic Cagayan de Oro locations and landmarks make the system authentic for your panel.
-            </p>
-          </div>
-          <div>
-            <h4 className="text-lg font-bold mb-2 flex items-center gap-2">
-              <Clock className="h-5 w-5" />
-              Prioritization
-            </h4>
-            <p className="text-primary-100/90">
-              Priority system ensures critical issues are handled first - perfect for showing efficiency.
-            </p>
-          </div>
-        </div>
-      </div>
     </div>
   );
 };
