@@ -14,7 +14,8 @@ import {
   CreditCard,
   Eye,
   Ticket,
-  HelpCircle
+  HelpCircle,
+  TrendingUp
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { clsx } from 'clsx';
@@ -40,6 +41,7 @@ const Sidebar = () => {
       { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
       { icon: HelpCircle, label: 'Inquiry', path: '/inquiry' },
       { icon: PlusCircle, label: 'Request Repair', path: '/request' },
+      { icon: TrendingUp, label: 'Progress Tracking', path: '/progress' },
       { icon: Wrench, label: 'My Appliances', path: '/appliances' },
       { icon: Ticket, label: 'Support Tickets', path: '/tickets' },
       { icon: History, label: 'Repair History', path: '/history' },
