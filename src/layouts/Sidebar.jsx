@@ -16,7 +16,8 @@ import {
   Ticket,
   HelpCircle,
   TrendingUp,
-  Activity
+  Activity,
+  Activity as Clock
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { clsx } from 'clsx';
@@ -50,6 +51,7 @@ const Sidebar = () => {
     ],
     technician: [
       { icon: LayoutDashboard, label: 'Job Dashboard', path: '/dashboard' },
+      { icon: Activity, label: 'My Jobs', path: '/tech-progress' },
       { icon: ClipboardList, label: 'Active Jobs', path: '/jobs' },
       { icon: MessageSquare, label: 'Messages', path: '/messages' },
       { icon: MapPin, label: 'Navigation', path: '/navigation' },
