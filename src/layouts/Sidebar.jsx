@@ -15,7 +15,8 @@ import {
   Eye,
   Ticket,
   HelpCircle,
-  TrendingUp
+  TrendingUp,
+  Activity
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { clsx } from 'clsx';
@@ -31,6 +32,7 @@ const Sidebar = () => {
   const menuItems = {
     admin: [
       { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
+      { icon: Activity, label: 'Progress Management', path: '/admin-progress' },
       { icon: Eye, label: 'Job Monitoring', path: '/job-monitoring' },
       { icon: Users, label: 'User Management', path: '/users' },
       { icon: ClipboardList, label: 'Booking Review', path: '/bookings' },
