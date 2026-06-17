@@ -7,14 +7,14 @@ import {
   CheckCircle2, 
   Info,
   Refrigerator,
-  Tv,
-  Fan,
+  Monitor,
+  Wind,
   Microwave
 } from 'lucide-react';
 
 const Appliances = () => {
   const [appliances, setAppliances] = useState([
-    { id: 1, name: 'Samsung Inverter AC', category: 'AC', brand: 'Samsung', model: 'AR12TY', condition: 'Good', icon: Fan },
+    { id: 1, name: 'Samsung Inverter AC', category: 'AC', brand: 'Samsung', model: 'AR12TY', condition: 'Good', icon: Wind },
     { id: 2, name: 'LG Smart Fridge', category: 'Refrigerator', brand: 'LG', model: 'GR-B247', condition: 'Repair Needed', icon: Refrigerator },
   ]);
 

@@ -17,7 +17,7 @@ export const AuthProvider = ({ children }) => {
   const login = (role) => {
     const newUser = {
       id: 1,
-      name: role === 'superadmin' ? 'Super Admin' : role === 'admin' ? 'Admin User' : role === 'technician' ? 'John Technician' : 'Jane Customer',
+      name: role === 'admin' ? 'Admin User' : role === 'technician' ? 'John Technician' : 'Jane Customer',
       role: role,
       email: `${role}@sparkserv.com`
     };
