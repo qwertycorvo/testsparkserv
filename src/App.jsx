@@ -15,6 +15,11 @@ import Inquiry from './pages/Inquiry';
 import ProgressTracking from './pages/ProgressTracking';
 import AdminProgressTracking from './pages/AdminProgressTracking';
 import TechnicianProgressTracking from './pages/TechnicianProgressTracking';
+import SuperAdminDashboard from './pages/SuperAdminDashboard';
+import SuperAdminManageAdmins from './pages/SuperAdminManageAdmins';
+import SuperAdminConfig from './pages/SuperAdminConfig';
+import SuperAdminAudit from './pages/SuperAdminAudit';
+import SuperAdminMaintenance from './pages/SuperAdminMaintenance';
 import Payments from './pages/Payments';
 import SupportTickets from './pages/SupportTickets';
 
@@ -44,6 +49,11 @@ function App() {
             <Route path="/progress" element={<ProgressTracking />} />
             <Route path="/admin-progress" element={<AdminProgressTracking />} />
             <Route path="/tech-progress" element={<TechnicianProgressTracking />} />
+            <Route path="/superadmin-dashboard" element={<SuperAdminDashboard />} />
+            <Route path="/superadmin-manage-admins" element={<SuperAdminManageAdmins />} />
+            <Route path="/superadmin-config" element={<SuperAdminConfig />} />
+            <Route path="/superadmin-audit" element={<SuperAdminAudit />} />
+            <Route path="/superadmin-maintenance" element={<SuperAdminMaintenance />} />
             <Route path="/history" element={<RepairHistory />} />
             <Route path="/bookings" element={<BookingReview />} />
             <Route path="/payments" element={<Payments />} />

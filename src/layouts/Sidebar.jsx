@@ -17,7 +17,11 @@ import {
   HelpCircle,
   TrendingUp,
   Activity,
-  Activity as Clock
+  UserCog,
+  Cog,
+  BarChart3,
+  FileText as FileTextIcon,
+  ShieldAlert
 } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { clsx } from 'clsx';
@@ -31,6 +35,13 @@ const Sidebar = () => {
   const navigate = useNavigate();
 
   const menuItems = {
+    superadmin: [
+      { icon: BarChart3, label: 'Platform Analytics', path: '/superadmin-dashboard' },
+      { icon: UserCog, label: 'Manage Admins', path: '/superadmin-manage-admins' },
+      { icon: Cog, label: 'System Config', path: '/superadmin-config' },
+      { icon: FileTextIcon, label: 'Audit Logs', path: '/superadmin-audit' },
+      { icon: ShieldAlert, label: 'Maintenance', path: '/superadmin-maintenance' },
+    ],
     admin: [
       { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
       { icon: Activity, label: 'Progress Management', path: '/admin-progress' },
