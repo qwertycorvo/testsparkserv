@@ -298,7 +298,7 @@ const kb = {
 
 const TroubleshootingGuide = () => {
   const navigate = useNavigate();
-  const { standardPricing, applianceTypes, commonProblems, technicians, repairRequests, submitEstimateRequest, estimates } = useData();
+  const { standardPricing, applianceTypes, commonProblems, technicians, repairRequests, submitEstimateRequest, estimates, acceptEstimate, declineEstimate } = useData();
   const { user } = useAuth();
   const messagesEndRef = useRef(null);
   const [messages, setMessages] = useState([
@@ -536,13 +536,19 @@ const TroubleshootingGuide = () => {
                         {existingEstimate.status === 'sent' ? (
                           <div className="flex gap-3">
                             <button 
-                              onClick={() => { /* accept logic here later */ }} 
+                              onClick={() => { 
+                                acceptEstimate(existingEstimate.id);
+                                setModalOpen(false);
+                                navigate('/customer-estimates');
+                              }} 
                               className="flex-1 py-3 rounded-xl bg-green-600 text-white font-bold hover:bg-green-700 transition-all"
                             >
                               Book Now (Accept Estimate)
                             </button>
                             <button 
-                              onClick={() => { /* decline logic here later */ }} 
+                              onClick={() => { 
+                                declineEstimate(existingEstimate.id);
+                              }} 
                               className="flex-1 py-3 rounded-xl bg-red-600 text-white font-bold hover:bg-red-700 transition-all"
                             >
                               Decline
