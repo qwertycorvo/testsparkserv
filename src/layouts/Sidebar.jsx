@@ -59,7 +59,7 @@ const Sidebar = () => {
       { icon: LayoutDashboard, label: 'Job Dashboard', path: '/dashboard' },
       { icon: Coins, label: 'Estimate Requests', path: '/tech-estimates' },
       { icon: Activity, label: 'My Jobs', path: '/tech-progress' },
-      { icon: ClipboardList, label: 'Active Jobs', path: '/jobs' },
+      { icon: ClipboardList, label: 'Booking Review', path: '/jobs' },
       { icon: MessageSquare, label: 'Messages', path: '/messages' },
       { icon: MapPin, label: 'Navigation', path: '/navigation' },
     ],

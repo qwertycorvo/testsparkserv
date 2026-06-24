@@ -44,7 +44,7 @@ function App() {
               <Route path="/job-monitoring" element={<JobMonitoring />} />
               <Route path="/appliances" element={<Appliances />} />
               <Route path="/users" element={<UserManagement />} />
-              <Route path="/jobs" element={<JobTracking />} />
+              <Route path="/jobs" element={<BookingReview />} />
               <Route path="/inquiry" element={<Inquiry />} />
               <Route path="/request" element={<RequestRepair />} />
               <Route path="/progress" element={<ProgressTracking />} />
