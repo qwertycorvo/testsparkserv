@@ -38,6 +38,7 @@ const Sidebar = () => {
   const menuItems = {
     admin: [
       { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
+      { icon: MessageSquare, label: 'Live Chat', path: '/live-chat' },
       { icon: Activity, label: 'Progress Management', path: '/admin-progress' },
       { icon: Eye, label: 'Job Monitoring', path: '/job-monitoring' },
       { icon: Users, label: 'User Management', path: '/users' },
@@ -47,6 +48,7 @@ const Sidebar = () => {
     ],
     customer: [
       { icon: LayoutDashboard, label: 'Dashboard', path: '/dashboard' },
+      { icon: MessageSquare, label: 'Live Chat', path: '/live-chat' },
       { icon: HelpCircle, label: 'Troubleshooting Guide', path: '/troubleshooting' },
       { icon: PlusCircle, label: 'Request Repair', path: '/request' },
       { icon: Coins, label: 'My Estimates', path: '/customer-estimates' },
@@ -57,14 +59,15 @@ const Sidebar = () => {
     ],
     technician: [
       { icon: LayoutDashboard, label: 'Job Dashboard', path: '/dashboard' },
+      { icon: MessageSquare, label: 'Live Chat', path: '/live-chat' },
       { icon: Coins, label: 'Estimate Requests', path: '/tech-estimates' },
       { icon: Activity, label: 'My Jobs', path: '/tech-progress' },
       { icon: ClipboardList, label: 'Booking Review', path: '/jobs' },
-      { icon: MessageSquare, label: 'Messages', path: '/messages' },
       { icon: MapPin, label: 'Navigation', path: '/navigation' },
     ],
     system_admin: [
       { icon: LayoutDashboard, label: 'System Dashboard', path: '/dashboard' },
+      { icon: MessageSquare, label: 'Live Chat', path: '/live-chat' },
       { icon: Users, label: 'User Management', path: '/users' },
       { icon: Activity, label: 'Progress Management', path: '/admin-progress' },
       { icon: Eye, label: 'Job Monitoring', path: '/job-monitoring' },

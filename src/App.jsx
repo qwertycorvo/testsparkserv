@@ -23,6 +23,7 @@ import CustomerEstimates from './pages/CustomerEstimates';
 import TechnicianEstimates from './pages/TechnicianEstimates';
 import EstimateRequestForm from './pages/EstimateRequestForm';
 import SystemSettings from './pages/SystemSettings';
+import LiveChat from './pages/LiveChat';
 
 // Mock components for other routes
 const Placeholder = ({ title }) => (
@@ -62,6 +63,7 @@ function App() {
               <Route path="/customer-estimates" element={<CustomerEstimates />} />
               <Route path="/tech-estimates" element={<TechnicianEstimates />} />
               <Route path="/request-estimate/:techId?" element={<EstimateRequestForm />} />
+              <Route path="/live-chat" element={<LiveChat />} />
             </Route>
 
             <Route path="*" element={<Navigate to="/" replace />} />

@@ -144,6 +144,44 @@ export const DataProvider = ({ children }) => {
     }
   ]);
 
+  // Chat Messages (per repair request)
+  const [chatMessages, setChatMessages] = useState([
+    {
+      id: 'CM-1001',
+      repairRequestId: 'SR-1002',
+      sender: 'Jane Customer',
+      role: 'customer',
+      text: 'Hi! My refrigerator isn\'t cooling. What should I do first?',
+      timestamp: new Date(Date.now() - 3600000).toISOString(), // 1 hour ago
+    },
+    {
+      id: 'CM-1002',
+      repairRequestId: 'SR-1002',
+      sender: 'Maria Santos',
+      role: 'technician',
+      text: 'Hi Jane! First, check if the door is closed properly and clean the condenser coils!',
+      timestamp: new Date(Date.now() - 3000000).toISOString(),
+    },
+  ]);
+
+  // Repair Progress Updates (per repair request)
+  const [repairProgress, setRepairProgress] = useState([
+    {
+      id: 'RP-1001',
+      repairRequestId: 'SR-1002',
+      status: 'Arrived at location',
+      timestamp: new Date(Date.now() - 7200000).toISOString(),
+      updatedBy: 'Maria Santos',
+    },
+    {
+      id: 'RP-1002',
+      repairRequestId: 'SR-1002',
+      status: 'Diagnosing the problem',
+      timestamp: new Date(Date.now() - 6000000).toISOString(),
+      updatedBy: 'Maria Santos',
+    },
+  ]);
+
   // Rule-based technician matching function
   const matchTechnicians = (applianceName) => {
     return technicians
@@ -234,6 +272,35 @@ export const DataProvider = ({ children }) => {
     ));
   };
 
+  const sendChatMessage = (messageData) => {
+    const newMessage = {
+      id: `CM-${1000 + chatMessages.length + 1}`,
+      ...messageData,
+      timestamp: new Date().toISOString(),
+    };
+    setChatMessages([...chatMessages, newMessage]);
+    return newMessage;
+  };
+
+  const updateRepairProgress = (progressData) => {
+    const newProgress = {
+      id: `RP-${1000 + repairProgress.length + 1}`,
+      ...progressData,
+      timestamp: new Date().toISOString(),
+    };
+    setRepairProgress([...repairProgress, newProgress]);
+    
+    // Also update the repair request status if needed
+    setRepairRequests(repairRequests.map(req => {
+      if (req.id === progressData.repairRequestId) {
+        return { ...req, status: 'in_progress' };
+      }
+      return req;
+    }));
+
+    return newProgress;
+  };
+
   return (
     <DataContext.Provider
       value={{
@@ -245,6 +312,8 @@ export const DataProvider = ({ children }) => {
         transactions,
         estimateRequests,
         estimates,
+        chatMessages,
+        repairProgress,
         matchTechnicians,
         submitRepairRequest,
         submitEstimateRequest,
@@ -252,6 +321,8 @@ export const DataProvider = ({ children }) => {
         acceptEstimate,
         declineEstimate,
         confirmPayment,
+        sendChatMessage,
+        updateRepairProgress,
       }}
     >
       {children}
