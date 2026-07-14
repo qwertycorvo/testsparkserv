@@ -24,6 +24,10 @@ import TechnicianEstimates from './pages/TechnicianEstimates';
 import EstimateRequestForm from './pages/EstimateRequestForm';
 import SystemSettings from './pages/SystemSettings';
 import LiveChat from './pages/LiveChat';
+import ManageUserRoles from './pages/ManageUserRoles';
+import DefineAccessControl from './pages/DefineAccessControl';
+import ManageSystemConfig from './pages/ManageSystemConfig';
+import SystemLogs from './pages/SystemLogs';
 
 // Mock components for other routes
 const Placeholder = ({ title }) => (
@@ -64,6 +68,10 @@ function App() {
               <Route path="/tech-estimates" element={<TechnicianEstimates />} />
               <Route path="/request-estimate/:techId?" element={<EstimateRequestForm />} />
               <Route path="/live-chat" element={<LiveChat />} />
+              <Route path="/user-roles" element={<ManageUserRoles />} />
+              <Route path="/access-control" element={<DefineAccessControl />} />
+              <Route path="/system-config" element={<ManageSystemConfig />} />
+              <Route path="/system-logs" element={<SystemLogs />} />
             </Route>
 
             <Route path="*" element={<Navigate to="/" replace />} />

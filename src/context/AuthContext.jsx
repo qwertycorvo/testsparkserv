@@ -28,7 +28,7 @@ export const AuthProvider = ({ children }) => {
       customer: 'Jane Customer',
       technician: 'John Technician',
       admin: 'Admin User',
-      system_admin: 'System Administrator'
+      superadmin: 'Super Administrator'
     };
     const newUser = {
       id: 1,

@@ -25,7 +25,7 @@ const Login = () => {
     { id: 'customer', name: 'Customer', icon: User, color: 'bg-blue-100 text-blue-600' },
     { id: 'technician', name: 'Technician', icon: Wrench, color: 'bg-orange-100 text-orange-600' },
     { id: 'admin', name: 'Admin', icon: UserCheck, color: 'bg-green-100 text-green-600' },
-    { id: 'system_admin', name: 'System Administrator', icon: Shield, color: 'bg-purple-100 text-purple-600' },
+    { id: 'superadmin', name: 'Super Administrator', icon: Shield, color: 'bg-purple-100 text-purple-600' },
   ];
 
   return (

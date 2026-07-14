@@ -65,16 +65,13 @@ const Sidebar = () => {
       { icon: ClipboardList, label: 'Booking Review', path: '/jobs' },
       { icon: MapPin, label: 'Navigation', path: '/navigation' },
     ],
-    system_admin: [
+    superadmin: [
       { icon: LayoutDashboard, label: 'System Dashboard', path: '/dashboard' },
-      { icon: MessageSquare, label: 'Live Chat', path: '/live-chat' },
-      { icon: Users, label: 'User Management', path: '/users' },
-      { icon: Activity, label: 'Progress Management', path: '/admin-progress' },
-      { icon: Eye, label: 'Job Monitoring', path: '/job-monitoring' },
-      { icon: ClipboardList, label: 'Booking Review', path: '/bookings' },
-      { icon: Ticket, label: 'Support Tickets', path: '/tickets' },
-      { icon: CreditCard, label: 'Transactions', path: '/payments' },
-      { icon: Settings, label: 'System Settings', path: '/settings' },
+      { icon: Users, label: 'Manage User Accounts', path: '/users' },
+      { icon: Shield, label: 'Manage User Roles', path: '/user-roles' },
+      { icon: Settings, label: 'Define Access Control', path: '/access-control' },
+      { icon: Cog, label: 'Manage System Config', path: '/system-config' },
+      { icon: FileTextIcon, label: 'View System Logs', path: '/system-logs' },
     ]
   };
 
