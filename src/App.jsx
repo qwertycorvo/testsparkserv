@@ -22,6 +22,7 @@ import TroubleshootingGuide from './pages/TroubleshootingGuide';
 import CustomerEstimates from './pages/CustomerEstimates';
 import TechnicianEstimates from './pages/TechnicianEstimates';
 import EstimateRequestForm from './pages/EstimateRequestForm';
+import SystemSettings from './pages/SystemSettings';
 
 // Mock components for other routes
 const Placeholder = ({ title }) => (
@@ -57,7 +58,7 @@ function App() {
               <Route path="/messages" element={<Placeholder title="Messages" />} />
               <Route path="/navigation" element={<JobTracking />} />
               <Route path="/troubleshooting" element={<TroubleshootingGuide />} />
-              <Route path="/settings" element={<Placeholder title="System Settings" />} />
+              <Route path="/settings" element={<SystemSettings />} />
               <Route path="/customer-estimates" element={<CustomerEstimates />} />
               <Route path="/tech-estimates" element={<TechnicianEstimates />} />
               <Route path="/request-estimate/:techId?" element={<EstimateRequestForm />} />

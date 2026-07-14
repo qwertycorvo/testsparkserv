@@ -4,7 +4,7 @@ const AuthContext = createContext();
 
 export const AuthProvider = ({ children }) => {
   // Roles: 'customer', 'technician', 'admin', 'system_admin'
-  const [user, setUser] = useState(() => {
+  const [user, _setUser] = useState(() => {
     try {
       const savedUser = localStorage.getItem('sparkserv_user');
       return savedUser ? JSON.parse(savedUser) : null;
@@ -13,6 +13,15 @@ export const AuthProvider = ({ children }) => {
       return null;
     }
   });
+
+  const setUser = (newUser) => {
+    _setUser(newUser);
+    if (newUser) {
+      localStorage.setItem('sparkserv_user', JSON.stringify(newUser));
+    } else {
+      localStorage.removeItem('sparkserv_user');
+    }
+  };
 
   const login = (role) => {
     const userNames = {
@@ -28,16 +37,14 @@ export const AuthProvider = ({ children }) => {
       email: `${role}@sparkserv.com`
     };
     setUser(newUser);
-    localStorage.setItem('sparkserv_user', JSON.stringify(newUser));
   };
 
   const logout = () => {
     setUser(null);
-    localStorage.removeItem('sparkserv_user');
   };
 
   return (
-    <AuthContext.Provider value={{ user, login, logout }}>
+    <AuthContext.Provider value={{ user, setUser, login, logout }}>
       {children}
     </AuthContext.Provider>
   );

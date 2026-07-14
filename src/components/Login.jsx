@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
-import { Wrench, Mail, Lock, Eye, EyeOff, ArrowRight, ShieldCheck, Cpu, User, UserCheck, Shield } from 'lucide-react';
+import { Wrench, Mail, Lock, Eye, EyeOff, ArrowRight, ShieldCheck, Cpu } from 'lucide-react';
 import { useAuth } from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
 
@@ -8,23 +8,13 @@ const Login = () => {
   const { login } = useAuth();
   const navigate = useNavigate();
   const [showPassword, setShowPassword] = useState(false);
-  const [selectedRole, setSelectedRole] = useState(null);
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
 
-  const roleOptions = [
-    { id: 'customer', name: 'Customer', icon: User, color: 'bg-blue-100 text-blue-600' },
-    { id: 'technician', name: 'Technician', icon: Wrench, color: 'bg-orange-100 text-orange-600' },
-    { id: 'admin', name: 'Admin', icon: UserCheck, color: 'bg-green-100 text-green-600' },
-    { id: 'system_admin', name: 'System Administrator', icon: Shield, color: 'bg-purple-100 text-purple-600' },
-  ];
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (selectedRole) {
-      login(selectedRole);
-      navigate('/dashboard');
-    }
+    login('customer'); // default to customer role for demo
+    navigate('/dashboard');
   };
 
   return (
@@ -92,53 +82,51 @@ const Login = () => {
           </div>
 
           <div className="mb-10">
-            <h2 className="text-3xl font-bold text-slate-900">Select Your Role</h2>
-            <p className="mt-2 text-slate-500">Choose how you want to access SPARKSERV for demonstration.</p>
+            <h2 className="text-3xl font-bold text-slate-900">Welcome Back!</h2>
+            <p className="mt-2 text-slate-500">Please login to continue to your dashboard.</p>
           </div>
 
           <form onSubmit={handleSubmit} className="space-y-6">
-            {/* Role Selection */}
-            <div className="space-y-3">
-              {roleOptions.map((role) => (
+            <div className="space-y-2">
+              <label className="text-sm font-semibold text-slate-700">Email Address</label>
+              <div className="relative">
+                <Mail className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  placeholder="you@example.com"
+                  className="w-full pl-12 pr-4 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                />
+              </div>
+            </div>
+
+            <div className="space-y-2">
+              <label className="text-sm font-semibold text-slate-700">Password</label>
+              <div className="relative">
+                <Lock className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-slate-400" />
+                <input
+                  type={showPassword ? 'text' : 'password'}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="••••••••"
+                  className="w-full pl-12 pr-12 py-4 rounded-2xl border border-slate-200 focus:outline-none focus:border-primary-500 focus:ring-2 focus:ring-primary-100"
+                />
                 <button
-                  key={role.id}
                   type="button"
-                  onClick={() => setSelectedRole(role.id)}
-                  className={`w-full p-4 rounded-2xl border-2 text-left flex items-center gap-4 transition-all ${
-                    selectedRole === role.id
-                      ? 'border-primary-500 bg-primary-50'
-                      : 'border-slate-100 hover:border-slate-200'
-                  }`}
+                  onClick={() => setShowPassword(!showPassword)}
+                  className="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600"
                 >
-                  <div className={`p-3 rounded-xl ${role.color}`}>
-                    <role.icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <p className="font-bold text-slate-900">{role.name}</p>
-                    <p className="text-xs text-slate-500">
-                      {role.id === 'customer' && 'Request repairs and track progress'}
-                      {role.id === 'technician' && 'Manage assigned jobs'}
-                      {role.id === 'admin' && 'Review bookings and confirm payments'}
-                      {role.id === 'system_admin' && 'Full system control'}
-                    </p>
-                  </div>
-                  {selectedRole === role.id && (
-                    <div className="ml-auto">
-                      <div className="h-6 w-6 rounded-full bg-primary-600 flex items-center justify-center">
-                        <div className="h-2 w-2 bg-white rounded-full"></div>
-                      </div>
-                    </div>
-                  )}
+                  {showPassword ? <EyeOff className="h-5 w-5" /> : <Eye className="h-5 w-5" />}
                 </button>
-              ))}
+              </div>
             </div>
 
             <button
               type="submit"
-              disabled={!selectedRole}
-              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary-600 py-4 text-white font-bold shadow-lg shadow-primary-200 hover:bg-primary-700 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
+              className="flex w-full items-center justify-center gap-2 rounded-2xl bg-primary-600 py-4 text-white font-bold shadow-lg shadow-primary-200 hover:bg-primary-700 transition-all"
             >
-              Continue as {roleOptions.find(r => r.id === selectedRole)?.name || 'Guest'}
+              Login to Dashboard
               <ArrowRight className="h-5 w-5" />
             </button>
           </form>
